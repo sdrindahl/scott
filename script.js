@@ -2,40 +2,45 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navbar = document.querySelector('.navbar');
 const navLinks = document.querySelectorAll('.nav-link');
+const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
 
 // Toggle mobile sidebar
-navToggle.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-    
-    // Animate hamburger icon
-    const spans = navToggle.querySelectorAll('span');
-    if (navbar.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-    } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    }
-});
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        
+        // Animate hamburger icon
+        const spans = navToggle.querySelectorAll('span');
+        if (navbar.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        } else {
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+    });
+}
 
 // Close mobile sidebar when clicking on a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         if (window.innerWidth <= 968) {
             navbar.classList.remove('active');
-            const spans = navToggle.querySelectorAll('span');
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
+            if (navToggle) {
+                const spans = navToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
         }
     });
 });
 
 // Close sidebar when clicking outside on mobile
 document.addEventListener('click', (e) => {
-    if (window.innerWidth <= 968) {
+    if (window.innerWidth <= 968 && navToggle && navbar) {
         if (!navbar.contains(e.target) && !navToggle.contains(e.target) && navbar.classList.contains('active')) {
             navbar.classList.remove('active');
             const spans = navToggle.querySelectorAll('span');
@@ -46,8 +51,9 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Tab-based navigation (no scrolling)
-navLinks.forEach(link => {
+// Tab-based navigation (no scrolling) - works for both desktop and mobile nav
+const allNavLinks = [...navLinks, ...mobileNavItems];
+allNavLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         
@@ -65,11 +71,19 @@ navLinks.forEach(link => {
             sectionToShow.style.display = 'block';
         }
         
-        // Update active nav link
-        navLinks.forEach(navLink => {
+        // Update active nav link for both desktop and mobile
+        allNavLinks.forEach(navLink => {
             navLink.classList.remove('active');
         });
         link.classList.add('active');
+        
+        // Also update the corresponding nav in the other menu
+        const section = link.getAttribute('data-section');
+        allNavLinks.forEach(navLink => {
+            if (navLink.getAttribute('data-section') === section) {
+                navLink.classList.add('active');
+            }
+        });
         
         // Scroll to top of content area
         window.scrollTo({
