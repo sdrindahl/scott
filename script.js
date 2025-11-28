@@ -1,15 +1,15 @@
 // Mobile Navigation Toggle
 const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
+const navbar = document.querySelector('.navbar');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Toggle mobile menu
+// Toggle mobile sidebar
 navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+    navbar.classList.toggle('active');
     
     // Animate hamburger icon
     const spans = navToggle.querySelectorAll('span');
-    if (navMenu.classList.contains('active')) {
+    if (navbar.classList.contains('active')) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
         spans[1].style.opacity = '0';
         spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
@@ -20,15 +20,30 @@ navToggle.addEventListener('click', () => {
     }
 });
 
-// Close mobile menu when clicking on a link
+// Close mobile sidebar when clicking on a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        const spans = navToggle.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
+        if (window.innerWidth <= 968) {
+            navbar.classList.remove('active');
+            const spans = navToggle.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
     });
+});
+
+// Close sidebar when clicking outside on mobile
+document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 968) {
+        if (!navbar.contains(e.target) && !navToggle.contains(e.target) && navbar.classList.contains('active')) {
+            navbar.classList.remove('active');
+            const spans = navToggle.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+    }
 });
 
 // Smooth scrolling for navigation links
@@ -71,13 +86,14 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Navbar background change on scroll
-const navbar = document.querySelector('.navbar');
+// Navbar shadow change on scroll (for left sidebar)
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-    } else {
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+    if (window.innerWidth > 968) {
+        if (window.scrollY > 50) {
+            navbar.style.boxShadow = '2px 0 12px rgba(0, 0, 0, 0.15)';
+        } else {
+            navbar.style.boxShadow = '2px 0 8px rgba(0, 0, 0, 0.1)';
+        }
     }
 });
 
@@ -571,3 +587,49 @@ console.log('✅ Dark mode toggle');
 console.log('✅ Animated counters');
 console.log('✅ Progress circles');
 console.log('✅ Interactive cards');
+
+// ===== EXPERIENCE SECTION - EXPAND/COLLAPSE =====
+function toggleJob(headerElement) {
+    const jobDetails = headerElement.nextElementSibling;
+    const isActive = jobDetails.classList.contains('active');
+    
+    // Toggle active state
+    headerElement.classList.toggle('active');
+    jobDetails.classList.toggle('active');
+    
+    // Update aria attributes for accessibility
+    headerElement.setAttribute('aria-expanded', !isActive);
+}
+
+function toggleAllJobs() {
+    const allHeaders = document.querySelectorAll('.company-header');
+    const allDetails = document.querySelectorAll('.job-details');
+    const expandBtn = document.querySelector('.expand-all-btn');
+    
+    // Check if all are expanded
+    const allExpanded = Array.from(allDetails).every(detail => detail.classList.contains('active'));
+    
+    if (allExpanded) {
+        // Collapse all
+        allHeaders.forEach(header => header.classList.remove('active'));
+        allDetails.forEach(detail => detail.classList.remove('active'));
+        expandBtn.textContent = 'Expand All';
+    } else {
+        // Expand all
+        allHeaders.forEach(header => header.classList.add('active'));
+        allDetails.forEach(detail => detail.classList.add('active'));
+        expandBtn.textContent = 'Collapse All';
+    }
+}
+
+// Make toggle functions globally available
+window.toggleJob = toggleJob;
+window.toggleAllJobs = toggleAllJobs;
+
+// Expand first job by default on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const firstHeader = document.querySelector('.company-header');
+    if (firstHeader) {
+        toggleJob(firstHeader);
+    }
+});

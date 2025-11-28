@@ -148,14 +148,22 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Quality Engineer</h3>
-                        <h4 class="company">HMH (Houghton Mifflin Harcourt)</h4>
-                        <p class="job-date">January 2023 - July 2025</p>
+            <h2 class="section-title">Work History</h2>
+            <button class="expand-all-btn" onclick="toggleAllJobs()">Expand All</button>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="company-header" onclick="toggleJob(this)">
+                        <div class="company-logo">
+                            <img src="https://logo.clearbit.com/hmhco.com" alt="HMH Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%232563eb%27 width=%27100%27 height=%27100%27/%3E%3Ctext x=%2750%27 y=%2750%27 font-family=%27Arial%27 font-size=%2740%27 fill=%27white%27 text-anchor=%27middle%27 dominant-baseline=%27middle%27%3EH%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <div class="company-info">
+                            <h3 class="company-name">HMH (Houghton Mifflin Harcourt)</h3>
+                            <p class="job-title">Quality Engineer</p>
+                            <p class="job-period">January 2023 - July 2025</p>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="job-details">
                         <ul class="job-description">
                             <li>Optimized software testing processes by developing automated UI tests using Playwright, reducing manual testing time by 40%</li>
                             <li>Designed and implemented functional test cases for new features and bug fixes, ensuring robust software releases</li>
@@ -166,12 +174,19 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Quality Engineer</h3>
-                        <h4 class="company">NWEA / Questar</h4>
-                        <p class="job-date">April 2019 - December 2022</p>
+                <div class="experience-card">
+                    <div class="company-header" onclick="toggleJob(this)">
+                        <div class="company-logo">
+                            <img src="https://logo.clearbit.com/nwea.org" alt="NWEA Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%23059669%27 width=%27100%27 height=%27100%27/%3E%3Ctext x=%2750%27 y=%2750%27 font-family=%27Arial%27 font-size=%2740%27 fill=%27white%27 text-anchor=%27middle%27 dominant-baseline=%27middle%27%3EN%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <div class="company-info">
+                            <h3 class="company-name">NWEA / Questar</h3>
+                            <p class="job-title">Quality Engineer</p>
+                            <p class="job-period">April 2019 - December 2022</p>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="job-details">
                         <ul class="job-description">
                             <li>Conducted comprehensive testing across QA, Integration, Stage, and Production environments</li>
                             <li>Created and documented test plans, resulting in 20% reduction in testing errors</li>
@@ -182,12 +197,19 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Senior Software Tester</h3>
-                        <h4 class="company">U.S. Bank</h4>
-                        <p class="job-date">September 2017 - December 2018</p>
+                <div class="experience-card">
+                    <div class="company-header" onclick="toggleJob(this)">
+                        <div class="company-logo">
+                            <img src="https://logo.clearbit.com/usbank.com" alt="U.S. Bank Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%23dc2626%27 width=%27100%27 height=%27100%27/%3E%3Ctext x=%2750%27 y=%2750%27 font-family=%27Arial%27 font-size=%2740%27 fill=%27white%27 text-anchor=%27middle%27 dominant-baseline=%27middle%27%3EU%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <div class="company-info">
+                            <h3 class="company-name">U.S. Bank</h3>
+                            <p class="job-title">Senior Software Tester</p>
+                            <p class="job-period">September 2017 - December 2018</p>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="job-details">
                         <ul class="job-description">
                             <li>Created and executed comprehensive test cases within an Agile environment</li>
                             <li>Enhanced issue resolution efficiency through defect tracking with Microsoft TFS</li>
@@ -196,12 +218,19 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Software Automation Engineer</h3>
-                        <h4 class="company">Granicus (formerly GovDelivery)</h4>
-                        <p class="job-date">June 2016 - June 2017</p>
+                <div class="experience-card">
+                    <div class="company-header" onclick="toggleJob(this)">
+                        <div class="company-logo">
+                            <img src="https://logo.clearbit.com/granicus.com" alt="Granicus Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%2316a34a%27 width=%27100%27 height=%27100%27/%3E%3Ctext x=%2750%27 y=%2750%27 font-family=%27Arial%27 font-size=%2740%27 fill=%27white%27 text-anchor=%27middle%27 dominant-baseline=%27middle%27%3EG%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <div class="company-info">
+                            <h3 class="company-name">Granicus (formerly GovDelivery)</h3>
+                            <p class="job-title">Software Automation Engineer</p>
+                            <p class="job-period">June 2016 - June 2017</p>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="job-details">
                         <ul class="job-description">
                             <li>Developed and implemented automated test scripts, enhancing testing efficiency and accuracy</li>
                             <li>Implemented automation frameworks using Ruby on Rails, Cucumber, and Jenkins</li>
@@ -210,12 +239,19 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Quality Assurance Engineer</h3>
-                        <h4 class="company">GovDelivery</h4>
-                        <p class="job-date">July 2010 - June 2016</p>
+                <div class="experience-card">
+                    <div class="company-header" onclick="toggleJob(this)">
+                        <div class="company-logo">
+                            <img src="https://logo.clearbit.com/govdelivery.com" alt="GovDelivery Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%232563eb%27 width=%27100%27 height=%27100%27/%3E%3Ctext x=%2750%27 y=%2750%27 font-family=%27Arial%27 font-size=%2740%27 fill=%27white%27 text-anchor=%27middle%27 dominant-baseline=%27middle%27%3EG%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <div class="company-info">
+                            <h3 class="company-name">GovDelivery</h3>
+                            <p class="job-title">Quality Assurance Engineer</p>
+                            <p class="job-period">July 2010 - June 2016</p>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="job-details">
                         <ul class="job-description">
                             <li>Led testing efforts for multiple software platforms within Agile monthly releases</li>
                             <li>Collaborated with developers and QA teams to validate software fixes</li>
@@ -225,12 +261,19 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Senior Quality Assurance Analyst</h3>
-                        <h4 class="company">Thomson Reuters</h4>
-                        <p class="job-date">January 2005 - June 2010</p>
+                <div class="experience-card">
+                    <div class="company-header" onclick="toggleJob(this)">
+                        <div class="company-logo">
+                            <img src="https://logo.clearbit.com/thomsonreuters.com" alt="Thomson Reuters Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect fill=%27%23ff6200%27 width=%27100%27 height=%27100%27/%3E%3Ctext x=%2750%27 y=%2750%27 font-family=%27Arial%27 font-size=%2740%27 fill=%27white%27 text-anchor=%27middle%27 dominant-baseline=%27middle%27%3ET%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <div class="company-info">
+                            <h3 class="company-name">Thomson Reuters</h3>
+                            <p class="job-title">Senior Quality Assurance Analyst</p>
+                            <p class="job-period">January 2005 - June 2010</p>
+                        </div>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="job-details">
                         <ul class="job-description">
                             <li>Oversaw up to five projects managing teams across the U.S., India, and the Philippines</li>
                             <li>Delegated tasks and tracked remote QA staff, leading to 25% boost in project completion rates</li>
@@ -348,55 +391,135 @@
     <section id="test-examples" class="test-examples">
         <div class="container">
             <h2 class="section-title">Test Case Examples</h2>
-            
-            <!-- Manual Test Case Example -->
-            <div class="example-container">
-                <h3 class="example-title"><i class="fas fa-clipboard-check"></i> Manual Test Case Example</h3>
-                <div class="test-case-card">
-                    <div class="test-case-header">
-                        <span class="test-id">TC-001</span>
-                        <span class="test-priority priority-high">High Priority</span>
+            <div class="test-examples-grid">
+                <!-- Manual Test Case Example -->
+                <div class="test-example-card">
+                    <div class="test-example-icon">
+                        <i class="fas fa-clipboard-check"></i>
                     </div>
-                    <h4 class="test-case-title">User Login - Valid Credentials</h4>
-                    <div class="test-case-section">
-                        <strong>Objective:</strong>
-                        <p>Verify that a user can successfully log in with valid credentials on Practice Test Automation site</p>
+                    <h3 class="test-example-title">Manual Test Case</h3>
+                    <p class="test-example-id">TC-001 | High Priority</p>
+                    <h4 class="test-scenario">User Login - Valid Credentials</h4>
+                    <div class="test-example-details">
+                        <div class="test-detail-item">
+                            <strong>Objective:</strong>
+                            <p>Verify successful login with valid credentials</p>
+                        </div>
+                        <div class="test-detail-item">
+                            <strong>Key Steps:</strong>
+                            <ul>
+                                <li>Navigate to login page</li>
+                                <li>Enter credentials</li>
+                                <li>Submit form</li>
+                                <li>Verify success message</li>
+                            </ul>
+                        </div>
+                        <div class="test-detail-item">
+                            <strong>Expected Result:</strong>
+                            <p>User authenticated and redirected to dashboard</p>
+                        </div>
                     </div>
-                    <div class="test-case-section">
-                        <strong>Preconditions:</strong>
-                        <ul>
-                            <li>Browser is open and functional</li>
-                            <li>Internet connection is stable</li>
-                            <li>Practice Test Automation site is accessible</li>
-                        </ul>
+                </div>
+
+                <!-- Playwright Automation Example -->
+                <div class="test-example-card">
+                    <div class="test-example-icon playwright">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <div class="test-case-section">
-                        <strong>Test Steps:</strong>
-                        <ol>
-                            <li>Navigate to https://practicetestautomation.com/practice-test-login/</li>
-                            <li>Enter "student" in the "Username" field</li>
-                            <li>Enter "Password123" in the "Password" field</li>
-                            <li>Click the "Submit" button</li>
-                        </ol>
+                    <h3 class="test-example-title">Playwright Automation</h3>
+                    <p class="test-example-id">Automated | JavaScript</p>
+                    <h4 class="test-scenario">Login Test Suite</h4>
+                    <div class="test-example-details">
+                        <div class="test-detail-item">
+                            <strong>Framework:</strong>
+                            <p>Playwright with TypeScript</p>
+                        </div>
+                        <div class="test-detail-item">
+                            <strong>Test Coverage:</strong>
+                            <ul>
+                                <li>Valid login scenarios</li>
+                                <li>Invalid credentials handling</li>
+                                <li>Form validation checks</li>
+                                <li>Session management</li>
+                            </ul>
+                        </div>
+                        <div class="test-detail-item">
+                            <strong>CI/CD Integration:</strong>
+                            <p>Automated runs on every commit via GitHub Actions</p>
+                        </div>
                     </div>
-                    <div class="test-case-section">
-                        <strong>Expected Results:</strong>
-                        <ul>
-                            <li>User is successfully authenticated</li>
-                            <li>Page redirects to the logged in successfully page</li>
-                            <li>Success message "Congratulations" or "successfully logged in" is displayed</li>
-                            <li>Log out button is visible</li>
-                        </ul>
+                    <button class="view-code-btn" onclick="alert('View full code on GitHub')">
+                        <i class="fab fa-github"></i> View Code
+                    </button>
+                </div>
+
+                <!-- Cypress Automation Example -->
+                <div class="test-example-card">
+                    <div class="test-example-icon cypress">
+                        <i class="fas fa-circle-notch"></i>
                     </div>
-                    <div class="test-case-section">
-                        <strong>Test Data:</strong>
-                        <p>Username: student | Password: Password123</p>
+                    <h3 class="test-example-title">Cypress E2E Tests</h3>
+                    <p class="test-example-id">Automated | JavaScript</p>
+                    <h4 class="test-scenario">User Registration Flow</h4>
+                    <div class="test-example-details">
+                        <div class="test-detail-item">
+                            <strong>Framework:</strong>
+                            <p>Cypress with custom commands</p>
+                        </div>
+                        <div class="test-detail-item">
+                            <strong>Test Coverage:</strong>
+                            <ul>
+                                <li>Complete registration flow</li>
+                                <li>Email verification</li>
+                                <li>Data validation</li>
+                                <li>Error handling</li>
+                            </ul>
+                        </div>
+                        <div class="test-detail-item">
+                            <strong>Results:</strong>
+                            <p>95% pass rate with visual regression testing</p>
+                        </div>
                     </div>
+                    <button class="view-code-btn" onclick="alert('View full code on GitHub')">
+                        <i class="fab fa-github"></i> View Code
+                    </button>
+                </div>
+
+                <!-- API Test Example -->
+                <div class="test-example-card">
+                    <div class="test-example-icon api">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="test-example-title">API Testing</h3>
+                    <p class="test-example-id">Automated | Postman/Newman</p>
+                    <h4 class="test-scenario">REST API Test Suite</h4>
+                    <div class="test-example-details">
+                        <div class="test-detail-item">
+                            <strong>Tools:</strong>
+                            <p>Postman, Newman, Jest</p>
+                        </div>
+                        <div class="test-detail-item">
+                            <strong>Test Coverage:</strong>
+                            <ul>
+                                <li>Authentication endpoints</li>
+                                <li>CRUD operations</li>
+                                <li>Error response handling</li>
+                                <li>Performance benchmarks</li>
+                            </ul>
+                        </div>
+                        <div class="test-detail-item">
+                            <strong>Metrics:</strong>
+                            <p>500+ API tests with 98% reliability</p>
+                        </div>
+                    </div>
+                    <button class="view-code-btn" onclick="alert('View full code on GitHub')">
+                        <i class="fab fa-github"></i> View Code
+                    </button>
                 </div>
             </div>
 
-            <!-- Playwright Automation Demo -->
-            <div class="example-container">
+            <!-- Legacy detailed example (hidden by default) -->
+            <div class="example-container" style="display: none;">
                 <h3 class="example-title"><i class="fas fa-video"></i> Playwright Test Automation Reel</h3>
                     <div class="video-reel-container">
                     <div class="reel-header">
