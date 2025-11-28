@@ -148,6 +148,7 @@ body {
 .nav-toggle {
     display: none;
     flex-direction: column;
+    gap: 4px;
     background: none;
     border: none;
     cursor: pointer;
@@ -157,9 +158,10 @@ body {
 .nav-toggle span {
     width: 25px;
     height: 3px;
-    background-color: var(--text-dark);
-    margin: 3px 0;
+    background-color: white;
+    margin: 0;
     transition: var(--transition);
+    display: block;
 }
 
 /* ===== HERO SECTION ===== */
@@ -1853,14 +1855,16 @@ section:not(.hero) {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 968px) {
+@media (max-width: 1024px) {
     body {
         margin-left: 0;
+        padding-top: 0;
     }
     
     .navbar {
         left: -280px;
         box-shadow: none;
+        z-index: 1000;
     }
     
     .navbar.active {
@@ -1869,32 +1873,65 @@ section:not(.hero) {
     }
 
     .nav-toggle {
-        display: flex;
+        display: flex !important;
         position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1001;
+        top: 16px;
+        left: 16px;
+        z-index: 1003;
         background: var(--primary-color);
-        padding: 12px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(10, 132, 255, 0.5);
+        flex-direction: column;
+        gap: 5px;
+        width: 48px;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgba(255, 255, 255, 0.2);
     }
     
     .nav-toggle span {
-        background-color: white;
+        background-color: white !important;
+        width: 24px;
+        height: 3px;
+        display: block !important;
+        border-radius: 2px;
+    }
+    
+    .nav-brand {
+        text-align: left;
+    }
+    
+    .nav-menu {
+        margin-top: 20px;
     }
     
     .hero {
-        padding: 140px 32px 80px;
-        margin: 20px 16px;
+        padding: 80px 20px 40px;
+        margin: 16px;
+        margin-top: 0;
     }
 
     .hero-title {
-        font-size: 48px;
+        font-size: 32px;
     }
 
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .profile-image i {
+        font-size: 44px;
+    }
+    
     .hero-subtitle {
-        font-size: 24px;
+        font-size: 18px;
+    }
+    
+    .hero-description {
+        font-size: 15px;
     }
 
     .hero-buttons {
