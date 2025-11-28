@@ -46,55 +46,46 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Smooth scrolling for navigation links
+// Tab-based navigation (no scrolling)
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
         
-        if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 70;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+        // Get target section
+        const targetSection = link.getAttribute('data-section');
+        
+        // Hide all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // Show target section
+        const sectionToShow = document.getElementById(targetSection);
+        if (sectionToShow) {
+            sectionToShow.style.display = 'block';
         }
+        
+        // Update active nav link
+        navLinks.forEach(navLink => {
+            navLink.classList.remove('active');
+        });
+        link.classList.add('active');
+        
+        // Scroll to top of content area
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 });
 
-// Active navigation link on scroll
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const scrollPosition = window.scrollY + 100;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.style.color = 'var(--primary-color)';
-                } else {
-                    link.style.color = '';
-                }
-            });
+// Initialize: Show only home section on load
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('section').forEach(section => {
+        if (section.id !== 'home') {
+            section.style.display = 'none';
         }
     });
-});
-
-// Navbar shadow change on scroll (for left sidebar)
-window.addEventListener('scroll', () => {
-    if (window.innerWidth > 968) {
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = '2px 0 12px rgba(0, 0, 0, 0.15)';
-        } else {
-            navbar.style.boxShadow = '2px 0 8px rgba(0, 0, 0, 0.1)';
-        }
-    }
 });
 
 // Intersection Observer for fade-in animations
