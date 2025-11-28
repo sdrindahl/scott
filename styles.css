@@ -2181,6 +2181,22 @@ body.dark-mode .hero {
     box-shadow: var(--shadow-md);
 }
 
+.cy-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: #04C38D;
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 11px;
+    font-family: monospace;
+    margin-right: 4px;
+    box-shadow: 0 2px 4px rgba(4, 195, 141, 0.3);
+}
+
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
