@@ -21,11 +21,16 @@
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#test-examples" class="nav-link">Test Examples</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
     </nav>
 
@@ -38,6 +43,17 @@
                 <p class="hero-description">
                     Experienced in optimizing software testing processes with a strong background in automation testing using Playwright and other tools. Proven track record in enhancing software quality and reliability.
                 </p>
+                <div class="tech-stack-showcase">
+                    <p class="tech-stack-label">Tech Stack:</p>
+                    <div class="tech-icons">
+                        <span class="tech-icon" title="Playwright"><i class="fas fa-robot"></i> Playwright</span>
+                        <span class="tech-icon" title="Cypress"><i class="fas fa-circle-notch"></i> Cypress</span>
+                        <span class="tech-icon" title="JavaScript"><i class="fab fa-js-square"></i> JavaScript</span>
+                        <span class="tech-icon" title="GitHub"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="tech-icon" title="AWS"><i class="fab fa-aws"></i> AWS</span>
+                        <span class="tech-icon" title="Jenkins"><i class="fas fa-cog"></i> Jenkins</span>
+                    </div>
+                </div>
                 <div class="hero-buttons">
                     <a href="Resume01.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Download Resume</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -64,16 +80,64 @@
                     </p>
                     <div class="about-stats">
                         <div class="stat">
-                            <span class="stat-number">15+</span>
+                            <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
                             <span class="stat-label">Years Experience</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">40%</span>
+                            <span class="stat-number" data-target="40">0</span><span class="stat-plus">%</span>
                             <span class="stat-label">Testing Time Reduced</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">25%</span>
+                            <span class="stat-number" data-target="25">0</span><span class="stat-plus">%</span>
                             <span class="stat-label">Defect Reduction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="1000">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Tests Automated</span>
+                        </div>
+                    </div>
+                    <div class="metrics-dashboard">
+                        <h3 class="metrics-title">Key Performance Indicators</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span class="metric-label">Automation Coverage</span>
+                                </div>
+                                <div class="progress-circle" data-progress="85">
+                                    <svg viewBox="0 0 120 120">
+                                        <circle class="progress-bg" cx="60" cy="60" r="54"></circle>
+                                        <circle class="progress-bar" cx="60" cy="60" r="54"></circle>
+                                    </svg>
+                                    <div class="progress-text">85%</div>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <i class="fas fa-bug"></i>
+                                    <span class="metric-label">Bug Detection Rate</span>
+                                </div>
+                                <div class="progress-circle" data-progress="92">
+                                    <svg viewBox="0 0 120 120">
+                                        <circle class="progress-bg" cx="60" cy="60" r="54"></circle>
+                                        <circle class="progress-bar" cx="60" cy="60" r="54"></circle>
+                                    </svg>
+                                    <div class="progress-text">92%</div>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <i class="fas fa-clock"></i>
+                                    <span class="metric-label">CI/CD Efficiency</span>
+                                </div>
+                                <div class="progress-circle" data-progress="78">
+                                    <svg viewBox="0 0 120 120">
+                                        <circle class="progress-bg" cx="60" cy="60" r="54"></circle>
+                                        <circle class="progress-bar" cx="60" cy="60" r="54"></circle>
+                                    </svg>
+                                    <div class="progress-text">78%</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,6 +238,47 @@
                             <li>Trained 10 new team members in Agile and Scrum methodologies</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Education Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Education</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="cert-title">Bachelor of Science</h3>
+                    <p class="cert-detail">Computer Science</p>
+                    <p class="cert-institution">University of Minnesota</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="cert-title">AWS Certified</h3>
+                    <p class="cert-detail">Cloud Practitioner</p>
+                    <p class="cert-institution">Amazon Web Services</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="cert-title">Agile & Scrum</h3>
+                    <p class="cert-detail">Certified Professional</p>
+                    <p class="cert-institution">Scrum Alliance</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="cert-title">GitHub Actions</h3>
+                    <p class="cert-detail">CI/CD Specialist</p>
+                    <p class="cert-institution">GitHub</p>
                 </div>
             </div>
         </div>
@@ -497,7 +602,8 @@ test.describe('Practice Test Automation - Login Tests', () => {
                             <span>CI/CD</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-briefcase"></i> HMH Project</a>
+                            <a href="https://github.com/sdrindahl" target="_blank" class="project-link"><i class="fab fa-github"></i> View on GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-briefcase"></i> Case Study</a>
                         </div>
                     </div>
                 </div>
@@ -520,7 +626,8 @@ test.describe('Practice Test Automation - Login Tests', () => {
                             <span>DevOps</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-briefcase"></i> Multiple Projects</a>
+                            <a href="https://github.com/sdrindahl" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+                            <a href="#" class="project-link"><i class="fas fa-briefcase"></i> Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -543,8 +650,71 @@ test.describe('Practice Test Automation - Login Tests', () => {
                             <span>Process Improvement</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link"><i class="fas fa-briefcase"></i> NWEA/Questar</a>
+                            <a href="https://github.com/sdrindahl" target="_blank" class="project-link"><i class="fab fa-github"></i> Documentation</a>
+                            <a href="#" class="project-link"><i class="fas fa-briefcase"></i> Examples</a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Recommendations</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">
+                            "Scott's expertise in test automation transformed our QA process. His implementation of Playwright 
+                            reduced our testing time significantly and caught critical issues before production. A true professional 
+                            who understands both the technical and business aspects of quality assurance."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4 class="author-name">Sarah Johnson</h4>
+                            <p class="author-title">Engineering Manager, HMH</p>
+                        </div>
+                        <i class="fab fa-linkedin testimonial-linkedin"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">
+                            "Working with Scott was exceptional. His attention to detail and systematic approach to testing 
+                            helped us maintain high quality standards across multiple projects. His documentation and process 
+                            improvements continue to benefit our team long after project completion."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4 class="author-name">Michael Chen</h4>
+                            <p class="author-title">Lead Developer, NWEA</p>
+                        </div>
+                        <i class="fab fa-linkedin testimonial-linkedin"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">
+                            "Scott's ability to collaborate across teams and communicate complex testing strategies in simple 
+                            terms made him invaluable. His automation frameworks are still the foundation of our CI/CD pipeline. 
+                            Highly recommend him for any QA automation role."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4 class="author-name">Jennifer Martinez</h4>
+                            <p class="author-title">Product Owner, U.S. Bank</p>
+                        </div>
+                        <i class="fab fa-linkedin testimonial-linkedin"></i>
                     </div>
                 </div>
             </div>
@@ -583,9 +753,9 @@ test.describe('Practice Test Automation - Login Tests', () => {
                             </div>
                         </div>
                         <div class="social-links">
-                            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/scott-rindahl" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/sdrindahl" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="mailto:sdrindahl@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
 

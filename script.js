@@ -382,3 +382,192 @@ window.runTest = runTest;
 
 console.log('Portfolio website loaded successfully! 🚀');
 console.log('Remember to customize the content with your own information.');
+
+// ===== DARK MODE TOGGLE =====
+const themeToggle = document.querySelector('.theme-toggle');
+const body = document.body;
+const themeIcon = themeToggle.querySelector('i');
+
+// Check for saved theme preference
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+    body.classList.add('dark-mode');
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
+}
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    
+    if (body.classList.contains('dark-mode')) {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+// ===== ANIMATED COUNTER FOR STATS =====
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000; // 2 seconds
+    const increment = target / (duration / 16); // 60fps
+    let current = 0;
+    
+    const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+            element.textContent = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+        } else {
+            element.textContent = target;
+        }
+    };
+    
+    updateCounter();
+}
+
+// Observe stats for animation
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            const statNumber = entry.target.querySelector('.stat-number');
+            if (statNumber && statNumber.getAttribute('data-target')) {
+                animateCounter(statNumber);
+                entry.target.classList.add('animated');
+            }
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat').forEach(stat => {
+    statsObserver.observe(stat);
+});
+
+// ===== ANIMATED PROGRESS CIRCLES =====
+function animateProgressCircle(circle) {
+    const progress = parseInt(circle.getAttribute('data-progress'));
+    const progressBar = circle.querySelector('.progress-bar');
+    const circumference = 2 * Math.PI * 54; // radius is 54
+    const offset = circumference - (progress / 100) * circumference;
+    
+    setTimeout(() => {
+        progressBar.style.strokeDashoffset = offset;
+    }, 100);
+}
+
+// Observe metrics for animation
+const metricsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            animateProgressCircle(entry.target);
+            entry.target.classList.add('animated');
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.progress-circle').forEach(circle => {
+    metricsObserver.observe(circle);
+});
+
+// ===== ENHANCED NAVIGATION ACTIVE STATE =====
+const sections = document.querySelectorAll('section[id]');
+
+function setActiveNav() {
+    const scrollY = window.pageYOffset;
+    
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+        
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => link.classList.remove('active-link'));
+            if (navLink) navLink.classList.add('active-link');
+        }
+    });
+}
+
+window.addEventListener('scroll', setActiveNav);
+
+// ===== TESTIMONIALS CAROUSEL (OPTIONAL) =====
+// Add swipe functionality for mobile testimonials
+let touchStartX = 0;
+let touchEndX = 0;
+
+const testimonialsGrid = document.querySelector('.testimonials-grid');
+
+if (testimonialsGrid) {
+    testimonialsGrid.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    testimonialsGrid.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            // Swipe left - could implement carousel next
+            console.log('Swiped left');
+        }
+        if (touchEndX > touchStartX + 50) {
+            // Swipe right - could implement carousel prev
+            console.log('Swiped right');
+        }
+    }
+}
+
+// ===== ENHANCED PROJECT CARD INTERACTION =====
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// ===== CERTIFICATIONS TILT EFFECT =====
+document.querySelectorAll('.cert-card').forEach(card => {
+    card.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+    });
+});
+
+// ===== TECH STACK ICONS INTERACTION =====
+document.querySelectorAll('.tech-icon').forEach(icon => {
+    icon.addEventListener('mouseenter', function() {
+        this.style.animationPlayState = 'paused';
+    });
+    
+    icon.addEventListener('mouseleave', function() {
+        this.style.animationPlayState = 'running';
+    });
+});
+
+console.log('🎨 Enhanced features loaded!');
+console.log('✅ Dark mode toggle');
+console.log('✅ Animated counters');
+console.log('✅ Progress circles');
+console.log('✅ Interactive cards');
