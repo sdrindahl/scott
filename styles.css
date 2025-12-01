@@ -189,6 +189,16 @@ body {
 .profile-image-container {
     margin-bottom: 32px;
     animation: fadeInUp 0.8s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-resume-small {
+    padding: 4px 10px;
+    font-size: 11px;
+    white-space: nowrap;
 }
 
 .profile-image {
@@ -203,11 +213,18 @@ body {
     box-shadow: 0 8px 24px rgba(10, 132, 255, 0.3);
     border: 3px solid var(--bg-white);
     transition: var(--transition);
+    overflow: hidden;
 }
 
 .profile-image:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 32px rgba(10, 132, 255, 0.4);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .profile-image i {
@@ -343,6 +360,25 @@ section:not(.hero) {
 .about-content {
     max-width: 1000px;
     margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.about-profile-image {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(10, 132, 255, 0.3);
+    border: 3px solid var(--bg-white);
+}
+
+.about-profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about-text p {
