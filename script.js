@@ -593,17 +593,26 @@ console.log('✅ Animated counters');
 console.log('✅ Progress circles');
 console.log('✅ Interactive cards');
 
-// ===== EXPERIENCE SECTION - EXPAND/COLLAPSE =====
+// ===== EXPERIENCE SECTION - EXPAND/COLLAPSE (Accordion) =====
 function toggleJob(headerElement) {
     const jobDetails = headerElement.nextElementSibling;
     const isActive = jobDetails.classList.contains('active');
     
-    // Toggle active state
-    headerElement.classList.toggle('active');
-    jobDetails.classList.toggle('active');
+    // Close ALL sections first (accordion behavior)
+    const allHeaders = document.querySelectorAll('.company-header');
+    const allDetails = document.querySelectorAll('.job-details');
+    allHeaders.forEach(header => {
+        header.classList.remove('active');
+        header.setAttribute('aria-expanded', 'false');
+    });
+    allDetails.forEach(detail => detail.classList.remove('active'));
     
-    // Update aria attributes for accessibility
-    headerElement.setAttribute('aria-expanded', !isActive);
+    // If this section wasn't already active, open it
+    if (!isActive) {
+        headerElement.classList.add('active');
+        jobDetails.classList.add('active');
+        headerElement.setAttribute('aria-expanded', 'true');
+    }
 }
 
 function toggleAllJobs() {
