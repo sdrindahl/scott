@@ -367,8 +367,8 @@ section:not(.hero) {
 
 .about-profile-image {
     flex-shrink: 0;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(10, 132, 255, 0.3);
